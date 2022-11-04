@@ -1,0 +1,25 @@
+<mvc:View controllerName="revolucao.controller.Main"
+    xmlns:mvc="sap.ui.core.mvc" displayBlock="true"
+    xmlns="sap.m">
+    <Page id="page" title="{i18n>title}">
+        <content >
+        <FlexBox
+        justifyContent="Center"> 
+       <Input id="inpBusca"/>
+       <Button text="Buscar" press ="OnPressBuscar" />
+  </FlexBox>
+    <List headerText="Lista de Resultados" id="idList" items="{ModeloImagem>/Images}">
+      <CustomListItem>
+         <HBox> 
+            <Image src="{ModeloImagem>/thumbnail}" width="5em" />
+            <VBox> 
+              <Link text="{ModeloImagem>title}" href="{ModeloImagem>url}" target="_blank"/>
+              <Label text="{ModeloImagem>provider/name}"/>
+            </VBox>
+         </HBox>
+      </CustomListItem>
+    </List> 
+      
+        </content>
+    </Page>
+</mvc:View>
